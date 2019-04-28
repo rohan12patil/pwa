@@ -6,17 +6,10 @@
 }
 
 
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener('beforeinstallprompt', (event) => {
     console.log('~~~~beforeinstallprompt');
- e.prompt();
- e.userChoice
-    .then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-    })
+    event.prompt();
+
 });
 
 
