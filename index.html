@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA</title>
+  
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web App">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+
+  <!-- Material -->
+  <link rel="stylesheet" href="./libs/material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./main.css">
+ 
+
+</head>
+<body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">PWA</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+              <a class="mdl-navigation__link" href="">Link1</a>
+              <a class="mdl-navigation__link" href="">Link2</a>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">PWA</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link 1</a>
+            <a class="mdl-navigation__link" href="">Link 2</a>
+            <br>
+            
+          </nav>
+        </div>
+        <main class="mdl-layout__content">
+          <div class="page-content">
+            
+                <div class="mdl-card mdl-shadow--3dp" style="margin:5px;">
+                        <div class="mdl-card__title">
+                          <h2 class="mdl-card__title-text">PWA</h2>
+                        </div>
+                        <div class="mdl-card__media">
+                          <img src="./images/pwa-fast.png" width="auto" height="157"  alt="">
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                          PWA Work in Progress !!!...
+                        </div>
+
+                        
+                  </div>
+                  <br>
+                  <button id="add-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                      Add to Home
+                    </button>
+                 
+
+          </div>
+        </main>
+      </div>
+
+  <script src="./libs/material.min.js" async></script>
+  <script src="./main.js" async></script>
+</body>
+</html>
