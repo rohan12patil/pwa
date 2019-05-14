@@ -4,7 +4,9 @@ const cacheName = 'cache-v1';
 const filesToCache = [
   '/',
   '/index.html',
-  '/images/pwa-fast.png'
+  'images/pwa-fast.png',
+  'libs/material.min.css',
+  'libs/material.min.js'
 ];
 
 
