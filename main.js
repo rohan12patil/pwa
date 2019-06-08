@@ -5,14 +5,6 @@ if ('serviceWorker' in navigator) {
     .then(() => { console.log('~~~1. Service Worker Registered'); });
 }
 
-/*
-window.addEventListener('beforeinstallprompt', (event) => {
-    console.log('~~~~beforeinstallprompt');
-    event.prompt();
-});
-*/
-
-
 var deferredPrompt;
 var btnAdd = document.getElementById('add-btn');
 btnAdd.style.display = 'none';

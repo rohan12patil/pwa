@@ -1,6 +1,6 @@
 
 const dataCacheName = 'pwa-data-v1';
-const cacheName = 'cache-v4';
+const cacheName = 'cache-v5';
 const filesToCache = [
   '/',
   '/index.html',
@@ -8,7 +8,6 @@ const filesToCache = [
   'libs/material.min.css',
   'libs/material.min.js'
 ];
-
 
 
 
@@ -24,16 +23,6 @@ self.addEventListener('install', function(e) {
 });
 
 
-
-
-
-
-//Update & replace cache files
-/*
-self.addEventListener('activate',(event)=>{
-  console.log('4. Activate:: [ServiceWorker] Activate');
-})
-*/
 
 self.addEventListener('activate', function(e) {
   console.log('4. Activate:: [ServiceWorker] Activate');
@@ -62,4 +51,3 @@ self.addEventListener('fetch',(event)=>{
   );
 
 });
-
