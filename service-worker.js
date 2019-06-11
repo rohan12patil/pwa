@@ -1,4 +1,55 @@
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
+if (workbox) {
+  console.log(`Yay! Workbox is loaded 🎉`);
+
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.googleapis\.com/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'google-fonts-stylesheets',
+  })
+);
+
+
+workbox.routing.registerRoute(
+    /\.(?:js|css)$/,
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: 'static-resources',
+    })
+  );
+
+
+workbox.routing.registerRoute(
+    /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
+    new workbox.strategies.CacheFirst({
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    })
+  );
+
+} else {
+  console.log(`! Workbox didn't load 😬`);
+}
+
+
+self.addEventListener('fetch',(event)=>{
+  
+  if(event.request.url === '/'){
+    const staleWhileRevalidate = new workbox.strategies.StaleWhileRevalidate();
+    event.respondWith(staleWhileRevalidate.handle({event}));
+  }
+});
+
+
+
+
+
+/*
 const dataCacheName = 'pwa-data-v1';
 const cacheName = 'cache-v5';
 const filesToCache = [
@@ -51,3 +102,4 @@ self.addEventListener('fetch',(event)=>{
   );
 
 });
+*/
