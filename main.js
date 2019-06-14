@@ -67,7 +67,7 @@ function checkNotificationSupport(){
 
 var notificationOptions={
   body:'Msg From PWA',
-  icon:'images\icons\icon-192x192.png',
+  icon:'images/icons/icon-192x192.png',
   data:{
     timestamp:Date.now(),
     loc:'index.html'
