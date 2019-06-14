@@ -5,6 +5,7 @@ const filesToCache = [
   '/',
   '/index.html',
   'images/pwa-fast.png',
+  'images/pwa-engaging.png',
   'libs/material.min.css',
   'libs/material.min.js'
 ];

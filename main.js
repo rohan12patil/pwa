@@ -1,13 +1,25 @@
+var btnAdd = document.getElementById('add-btn');
+btnAdd.style.display = 'none';
+
+var deferredPrompt;
+
+var notifyCard = document.getElementById('notify-card');
+notifyCard.style.display = 'none';
+
+var btnNotify = document.getElementById('notify-btn');
+
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('./service-worker.js')
-    .then(() => { console.log('~~~1. Service Worker Registered'); });
+    .then(() => { 
+      console.log('~~~1. Service Worker Registered');
+      checkNotificationSupport();
+     })
+    .catch(() => {console.log("Registration Failed")});
 }
 
-var deferredPrompt;
-var btnAdd = document.getElementById('add-btn');
-btnAdd.style.display = 'none';
+
 
 window.addEventListener('beforeinstallprompt', (event) => {
   console.log('~~~~beforeinstallprompt');
@@ -35,3 +47,59 @@ btnAdd.addEventListener('click', (e) => {
       btnAdd.style.display = 'none';
     });
 });
+
+
+// Notification 
+function checkNotificationSupport(){
+  if('Notification' in window){
+    console.log("Notification supported");
+    notifyCard.style.display = 'block';
+    Notification.requestPermission((status) => {
+        console.log("Notification Status ::",status);
+    })
+  }
+  else{
+    console.log("Notification NOT supported");
+    
+  }
+};
+
+
+var notificationOptions={
+  body:'Msg From PWA',
+  icon:'images\icons\icon-192x192.png',
+  data:{
+    timestamp:Date.now(),
+    loc:'index.html'
+  },
+  actions:[
+    {action:'go',title:'Go Now'}
+  ]
+}
+
+function notify(title,options){
+  if(Notification.permission === 'granted'){
+    navigator.serviceWorker.ready.then((reg) => {
+        reg.showNotification(title,options);
+    });
+  }
+}
+
+btnNotify.addEventListener('click', (e) => {
+  var notify_text = document.getElementById('notify_text').value;
+  notify(notify_text,notificationOptions);
+});
+
+
+// CLOSE NOTIFICATION
+function closeNotification(msg,evt){
+  console.log(msg, evt.notification.data);
+  evt.notification.close();
+}
+
+
+self.addEventListener('notificationclose',(event)=>{
+  closeNotification('Notification Closed ',event) ;
+});
+
+
