@@ -8,7 +8,8 @@ const filesToCache = [
   'images/pwa-engaging.png',
   'libs/material.min.css',
   'libs/material.min.js',
-  'videos'
+  'videos/video1.mp4',
+  'videos/video2.mp4',
 ];
 
 
@@ -19,7 +20,9 @@ self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
       console.log('3.Instal::  [ServiceWorker] Caching app shell');
-      return cache.addAll(filesToCache);
+      return cache.addAll(filesToCache).then((result)=>{
+        console.log('cache Result',result);
+      });
     })
   );
 });
