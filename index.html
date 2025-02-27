@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWA</title>
-  
+
   <!-- TODO add manifest here -->
   <link rel="manifest" href="/manifest.json">
 
   <!-- Add to home screen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Web App">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-title" content="Web App">
   <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
   <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
@@ -23,77 +24,99 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./main.css">
 </head>
+
 <body>
-  
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-          <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">PWA</span>
-            <div class="mdl-layout-spacer"></div>
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-              <a class="mdl-navigation__link" href="">Link1</a>
-              <a class="mdl-navigation__link" href="">Link2</a>
-            </nav>
-          </div>
-        </header>
-        
-        <div class="mdl-layout__drawer">
-          <span class="mdl-layout-title">PWA</span>
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Link 1</a>
-            <a class="mdl-navigation__link" href="">Link 2</a>           
-          </nav>
-        </div>
 
-        <main class="mdl-layout__content">
-          <div class="page-content">
-            <video src="./videos/video1.mp4"></video>
-                <br>
-                <div class="mdl-card mdl-shadow--3dp" style="margin:3%;">
-                        <div class="mdl-card__title">
-                          <h2 class="mdl-card__title-text">Reliable 1</h2>
-                        </div>
-                        <div class="mdl-card__media">
-                          <img src="./images/pwa-fast.png" width="auto" height="157"  alt="">
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                          
-                        </div>
-                        <br>
-                        <button id="add-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                            Add to Home
-                        </button>
-                       
-                </div>
-                  <br>
-                
-
-                <br>
-                <div class="mdl-card mdl-shadow--3dp" style="margin:3%;" id="notify-card">
-                  <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Engaging</h2>
-                  </div>
-                  <div class="mdl-card event-card" style="background: #46B6AC ">
-                    <img src="./images/pwa-engaging.png" width="auto" height="157"  alt="">
-                  </div>
-                  <div class="mdl-card__supporting-text">
-                      <div class="mdl-textfield mdl-js-textfield">
-                          <input class="mdl-textfield__input" type="text" id="notify_text">
-                          <label class="mdl-textfield__label" for="sample1">Enter Notification Text...</label>
-                        </div>
-                      <button id="notify-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Notification
-                    </button>
-                  </div>
-                </div>
-                <br>
-          </div>
-        </main>
-
-        
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">PWA</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="">Link1</a>
+          <a class="mdl-navigation__link" href="">Link2</a>
+        </nav>
       </div>
+    </header>
+
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">PWA</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link 1</a>
+        <a class="mdl-navigation__link" href="">Link 2</a>
+      </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <!-- <video controls style="max-height: 500px;width: auto;">
+          <source src="./videos/video1.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video controls style="max-height: 500px;width: auto;">
+          <source src="./videos/video2.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="mdl-card mdl-shadow--3dp" style="margin:3%;">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Reliable 1</h2>
+          </div>
+          <div class="mdl-card__media">
+            <img src="./images/pwa-fast.png" width="auto" height="157" alt="">
+          </div>
+          <div class="mdl-card__supporting-text">
+
+          </div>
+          <br>
+          <button id="add-btn"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Add to Home
+          </button>
+
+        </div>
+        <br>
+
+
+        <br>
+        <div class="mdl-card mdl-shadow--3dp" style="margin:3%;" id="notify-card">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Engaging</h2>
+          </div>
+          <div class="mdl-card event-card" style="background: #46B6AC ">
+            <img src="./images/pwa-engaging.png" width="auto" height="157" alt="">
+          </div>
+          <div class="mdl-card__supporting-text">
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="notify_text">
+              <label class="mdl-textfield__label" for="sample1">Enter Notification Text...</label>
+            </div>
+            <button id="notify-btn"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Notification
+            </button>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--5-col">
+          <video controls style="max-height: 500px;width: 100%;">
+            <source src="./videos/video1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mdl-cell mdl-cell--5-col">
+          <video controls style="max-height: 500px;width: 100%;">
+            <source src="./videos/video2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </main>
+
+
+  </div>
 
   <script src="./libs/material.min.js" async></script>
   <script src="./main.js" async></script>
 </body>
+
 </html>
